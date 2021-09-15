@@ -1,6 +1,4 @@
 # Nate Krieger
-## Software Engineer (full stack)
-### Mobile/Frontend Specialist
 
 🔭.  I’m currently working on ... this README!  More coming soon.
 
