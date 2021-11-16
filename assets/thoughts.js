@@ -4,20 +4,38 @@ const REPLY_VALUE = 2; // base points per new reply
 const RETWEET_VALUE = 3; // base points per new retweet
 // TODO(): make all above constants configurable
 
-function scoreRound(roundId, timestamp){
-  // get an list of all the rows which need scoring for the round ID
-  // const round = getRowNumbersInRound(roundId)
-  // rounds.forEach((user) => scoreUser(timestamp))
-}
-
+// helper functions
 function getRowNumbersInRound(roundId){
   let rowNumbers = [];
   // TODO: Get all the row numbers with the Round ID 
   return rowNumbers
 }
 
-function scoreAccount(accountName, timestamp){
-  // get three days of tweets using Search API
+function getTimestampFromRoundId(roundId){
+  let timestamp;
+  // TODO: get the timestamp and assign it.
+  return timestamp;
+}
+
+// scoring waterfall
+
+function scoreRound(roundId){
+  // get an list of all the rows which need scoring for the round ID
+  const round = getRowNumbersInRound(roundId)
+  rounds.forEach((user) => scoreRow(user, roundId))
+}
+
+function scoreRow(user, roundId) {
+  let accountList = [];
+  // TODO: Get the three accounts from the table with the round and user ID
+  const accountScores = accountList.map((account) => scoreAccount(account, roundId));
+  writeRow(accountScores, roundId, user)
+
+}
+
+function scoreAccount(accountName, roundId){
+  const timestamp = getTimestampFromRoundId(roundId);
+  // TDOO: get three days of tweets using Search API
   // score each tweet
   // create list of tweets which are eligible to scoread
   // 
